@@ -53,7 +53,7 @@ namespace PortalRandkowy.API.Controllers
             var data = await _context.Values.FindAsync(id);
             data.Name = value.Name;
             _context.Values.Update(data);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return Ok(value);
         }
 
@@ -68,7 +68,7 @@ namespace PortalRandkowy.API.Controllers
                 await _context.SaveChangesAsync();
                 return Ok(id);
             }
-            catch (System.Exception ex)
+            catch
             {
                  return NoContent();
             }
