@@ -23,10 +23,10 @@ namespace PortalRandkowy.API.Data
             
             if(!VerifyPasswordHash(password, user.PasswordSalt, user.PasswordHash))
                 return null;
+            return user;
         }
 
       
-
         public async Task<User> Register(User user, string password)
         {
                 byte[] passwordHash, passwordSalt;
@@ -45,7 +45,7 @@ namespace PortalRandkowy.API.Data
         {
             if (await _context.Users.AnyAsync(x => x.Name == username))
                 return true;
-                
+
             return false;
         }
         #endregion

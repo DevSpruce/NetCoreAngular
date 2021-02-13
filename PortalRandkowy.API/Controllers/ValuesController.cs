@@ -10,8 +10,6 @@ using PortalRandkowy.API.Models;
 namespace PortalRandkowy.API.Controllers
 {
     // http://localhost:5000/api/Values
-    [Route("api/[controller]")]
-    [ApiController]
     public class ValuesController : ControllerBase
     {
         private readonly DataContext _context;
