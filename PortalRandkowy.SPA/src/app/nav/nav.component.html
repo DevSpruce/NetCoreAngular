@@ -16,7 +16,7 @@
     </ul>
     <div *ngIf="loggedIn()" class="btn-group">
       <a class="dropdown-toggle text-light">
-        Witaj Użytkowniku
+        Witaj {{ authService.decodedToken?.unique_name | titlecase}}
       </a>
       <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edytuj profil</a>
