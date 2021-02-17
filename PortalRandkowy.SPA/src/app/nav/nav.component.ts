@@ -1,6 +1,5 @@
 import { AuthService } from './../_services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-nav',
@@ -25,8 +24,9 @@ export class NavComponent implements OnInit {
   }
 
   loggedIn(){
-    const token = localStorage.getItem('token');
-    return !!token;
+    // const token = localStorage.getItem('token');
+    // return !!token;
+    return this.authService.loggedIn();
   }
 
   logout(){
